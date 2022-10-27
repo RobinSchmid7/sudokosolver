@@ -57,7 +57,7 @@ class Sudoku():
                         pos_num.remove(p)
 
         if len(pos_num) == 1:
-            print("[2]: [{},{}]: {}".format(i_+1,j_+1,pos_num[0]))
+            print("New number at position [{},{}] is {}".format(i_+1,j_+1,pos_num[0]))
             self.board[i_][j_] = pos_num[0]
             self.print_board()
 
