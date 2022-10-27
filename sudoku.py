@@ -40,22 +40,26 @@ class Sudoku():
         i_block = (i_ // 3) * 3
         j_block = (j_ // 3) * 3
 
+        # Check which numbers are possible in a row
         for i in range(0, 9):
             for p in pos_num:
                 if self.board[i][j_] == p:
                     pos_num.remove(p)
 
+        # Check which numbers are possible in a column
         for j in range(0,9):
             for p in pos_num:
                 if self.board[i_][j] == p:
                     pos_num.remove(p)
 
+        # Check which numbers are possible in a block
         for i in range(i_block, i_block + 3):
             for j in range(j_block, j_block + 3):
                 for p in pos_num:
                     if self.board[i][j] == p:
                         pos_num.remove(p)
 
+        # If only one number is possible, this must be there
         if len(pos_num) == 1:
             print("New number at position [{},{}] is {}".format(i_+1,j_+1,pos_num[0]))
             self.board[i_][j_] = pos_num[0]
