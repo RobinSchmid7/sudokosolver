@@ -1,9 +1,9 @@
 """
-Sudoko Solver with zero imports
+Sudoko Solver with zero import libraries
 Robin Schmid
 """
 
-MAX_NUM_IT = 200 # Max number of iterations before it should stop
+MAX_NUM_IT = 500 # Max number of iterations before it should stop
 INPUT_GAME = False  # True if enter initial game state via terminal input, False to load hardcoded
 
 # Initial game state, gets loaded when INPUT_GAME is set to False
@@ -37,6 +37,7 @@ class Sudoku():
                     cnt += 1
         if cnt == 0:
             return 1
+        return 0
 
     def enter_game(self):
         """Enters the initial game state, 0 is unknown"""
